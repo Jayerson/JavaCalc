@@ -2,7 +2,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Menu {
-    public void main() {
+    public static void main() {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the first number:");
         double first = input.nextDouble();
@@ -11,20 +11,22 @@ public class Menu {
         if (operator == '#') {
             Sqrt out = new Sqrt(first);
         }
-        System.out.println("Please enter the second number:");
-        double second = input.nextDouble();
-        if (operator == '+') {
-            new Add(first, second);
-        } else if (operator == '-') {
-            new Subtract(first, second);
-        } else if (operator == '*') {
-            new Multiply(first, second);
-        } else if (operator == '/') {
-            new Divide(first, second);
-        } else if (operator == '^') {
-            new Power(first, second);
-        } else {
-            System.out.println("Check your inputs");
+        if (operator != '#') {
+            System.out.println("Please enter the second number:");
+            double second = input.nextDouble();
+            if (operator == '+') {
+                new Add(first, second);
+            } else if (operator == '-') {
+                new Subtract(first, second);
+            } else if (operator == '*') {
+                new Multiply(first, second);
+            } else if (operator == '/') {
+                new Divide(first, second);
+            } else if (operator == '^') {
+                new Power(first, second);
+            } else {
+                System.out.println("Check your inputs");
+            }
         }
     }
 }
